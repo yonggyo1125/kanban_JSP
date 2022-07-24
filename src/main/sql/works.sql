@@ -1,0 +1,7 @@
+CREATE TABLE `kanban`.`works` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `status` ENUM('READY', 'PROGRESS', 'DONE') NULL DEFAULT 'READY' COMMENT '작업상태 READY - 준비중, PROGRESS - 진행중, DONE - 완료',
+  `workNm` VARCHAR(255) NULL COMMENT '작업내용',
+  `regDt` DATETIME NULL DEFAULT NOW() COMMENT '등록일시',
+  `modDt` DATETIME NULL COMMENT '수정일시',
+  PRIMARY KEY (`id`));

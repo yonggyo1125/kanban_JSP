@@ -12,6 +12,7 @@ import constants.Status;
  */
 public class KanbanDto {
 
+	private int id; // 작업 번호
 	private Status status; // 작업 상태 
 	private String workNm; // 작업 내용
 	private LocalDateTime regDt; // 등록일시
@@ -23,6 +24,14 @@ public class KanbanDto {
 		super();
 		this.status = status;
 		this.workNm = workNm;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Status getStatus() {
@@ -59,6 +68,7 @@ public class KanbanDto {
 
 	@Override
 	public String toString() {
-		return "KanbanDto [status=" + status + ", workNm=" + workNm + ", regDt=" + regDt + ", modDt=" + modDt + "]";
+		return "KanbanDto [id=" + id + ", status=" + status + ", workNm=" + workNm + ", regDt=" + regDt + ", modDt="
+				+ modDt + "]";
 	}
 }

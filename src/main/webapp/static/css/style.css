@@ -1,0 +1,76 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+ * { box-sizing: border-box; color: #212121; outline: none; font-family: 'Nanum Gothic', sans-serif; }
+html { font-size: 13px; }
+body { margin: 0;  background-color: #f9f9f9; }
+a { text-decoration: none; }
+ul, ol, dl { padding: 0; list-style: none; margin: 0;  }
+dt, dd { padding: 0; margin: 0; }
+h1, h2, h3 { margin: 0; }
+
+.dn { display: none !important; }
+
+header { padding: 20px; border-bottom: 2px dashed #212121; font-weight: 700; background-color: #ffffff; }
+h1 { text-align: center; font-size: 2rem;  }
+h2 { text-shadow: 1px 1px 1px #000000; font-size: 1.3rem; margin: 10px 0; }
+
+main { padding: 20px 15px; max-width: 800px; margin: 0 auto; min-height: 500px; }
+
+
+footer { text-align: center; padding: 30px; border-top: 2px dashed #212121; background-color: #f8f8f8; position: fixed; bottom: 0; left: 0; width: 100%; font-size: 1.5rem; }
+
+/** 작업 등록 영역 S */
+#frmRegist dl { box-shadow: 2px 2px 5px #d5d5d5; border-radius: 5px;  background-color: #ffffff;  display: flex; padding: 20px 10px; align-items: center;  flex-wrap: wrap; margin-bottom: 30px; }
+#frmRegist dt { width: 70px; font-weight: bold; }
+#frmRegist dd { margin-right: 5px; }
+#frmRegist button { background-color: #212121; color: #ffffff; font-size: 1.15rem; height: 30px; border-radius: 3px; border: 0; cursor: pointer; padding: 0 20px; }
+#frmRegist button i { color: #ffffff; }
+#frmRegist input[type='text'],
+#frmRegist select { width: 100%; height: 30px;  border: 1px solid #d5d5d5; border-radius: 3px; }
+#frmRegist input[type='text'] { width: 300px; }
+/** 작업 등록 영역 E */
+
+/** 작업 목록 영역 S */
+#frmDelete #wrap { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 20px; }
+#frmDelete #wrap > .works { margin-left: 10px; background-color: #ffffff; padding: 20px; width: calc(100% / 3 - 7px); min-height: 500px; border-radius: 5px; box-shadow: 2px 2px 5px #d5d5d5; }
+#frmDelete #wrap > .works:first-child { margin-left: 0; }
+#frmDelete h3 { border-bottom: 2px dashed #212121; padding-bottom: 12px; text-align: center; font-size: 1.1rem; margin-bottom: 20px; }
+
+#frmDelete  li { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+#frmDelete input[type='checkbox'] { display: none; }
+ #frmDelete input[type='checkbox']+label { width: calc(100% - 38px); border: 1px solid #212121; margin-bottom: 2px; border-radius: 3px; padding: 0 10px; cursor: pointer; height: 30px; line-height: 28px; font-weight: 700; }
+ #frmDelete input[type='checkbox']:checked+label { background-color: orange; border-color: orange;  } 
+  #frmDelete  .edit { background-color: #212121; color: #ffffff; padding: 0 10px; height: 30px; margin-left: 3px; border-radius: 3px; line-height: 30px;  font-size: 0.9rem; cursor: pointer;}
+#frmDelete  .edit i { color: #ffffff;   font-size: 1.2rem; }
+  
+#delete { background-color: #212121; color: #ffffff; font-size: 1.1rem; padding: 8px 20px; border-radius: 3px; cursor: pointer; }
+#delete i  { color: #ffffff; vertical-align: middle; }
+
+/** 작업 등록 영역 E */
+
+/** 작업 수정 영역 S */
+#frmUpdate h3 { border-bottom: 2px dashed #212121; padding-bottom: 10px; margin-bottom: 20px; font-size: 1.2rem; }
+#frmUpdate  select, 
+#frmUpdate input[type='text'],
+#frmUpdate button { width: 100%; display: block; height: 35px; margin-bottom: 5px; border: 1px solid #d5d5d5; border-radius: 3px; }
+#frmUpdate button { border-color: #212121; background-color: #212121; color: #ffffff; font-size: 1.1rem; cursor: pointer; margin-top: 30px;  }
+#frmUpdate button i { vertical-align: middle; color: #ffffff; font-size: 1.1rem; }
+
+/** 작업 수정 영역 E */
+
+/** 팝업 영역 S */
+#layer_dim { background:rgba(0,0,0, 0.7); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100;  cursor: pointer; }
+/** 팝업 영역 E */
+#layer { width: 350px; height: 450px;  z-index: 101; position: fixed; left: calc(50% - 175px); top: calc(50% - 225px); background-color: #ffffff; border-radius: 10px; padding: 20px; }
+
+@media all and (max-width: 700px) {
+	#frmDelete #wrap > .works  { margin-left: 0; width: 100%; margin-bottom: 20px;  }
+    .mobile_hidden { display: none; }
+    #frmRegist dd {display: block; width: 100%; }
+    #frmRegist dd:first-of-type { margin-bottom: 5px; }
+    #frmRegist input[type='text'],  #frmRegist button  { width: 100% !important; display: block; margin-right: 0;  }
+    #frmRegist button  { margin-top: 10px; height: 40px; }
+}
+
+@media all and (max-width: 500px) {
+	html { font-size: 11px; }
+}

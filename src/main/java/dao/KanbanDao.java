@@ -152,6 +152,42 @@ public class KanbanDao {
 	}
 	
 	/**
+	 * 작업 내역 조회
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public KanbanDto get(int id) {
+		KanbanDto kanban = new KanbanDto();
+		String sql = "SELECT * FROM works WHERE id = ?";
+		try (Connection conn = getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				kanban.setId(rs.getInt("id"));
+				kanban.setStatus(Enum.valueOf(Status.class, rs.getString("status")));
+				kanban.setWorkNm(rs.getString("workNm"));
+				kanban.setRegDt(rs.getTimestamp("regDt").toLocalDateTime());
+				Timestamp modDt = rs.getTimestamp("modDt");
+				if (modDt != null) {
+					kanban.setModDt(modDt.toLocalDateTime());
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return kanban;
+	}
+	public KanbanDto get(String id) {
+		if (id == null) {
+			return null;
+		}
+		
+		return get(Integer.valueOf(id));
+	}
+	/**
 	 * Connection 객체 생성하기
 	 * 
 	 * @return
